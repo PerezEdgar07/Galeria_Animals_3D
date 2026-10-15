@@ -1,0 +1,332 @@
+/* ===== ESTILOS GENERALES ===== */
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --fondo: #0b0f19;
+            --tarjeta: #151c2d;
+            --borde: #29334a;
+            --texto: #f3f4f6;
+            --texto-suave: #b0bacb;
+            --azul: #38bdf8;
+            --azul-oscuro: #0f2a45;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 20px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(ellipse at top, #14243b 0%, var(--fondo) 55%);
+            color: var(--texto);
+            min-height: 100vh;
+        }
+
+        /* ===== ENCABEZADO ===== */
+        header {
+            max-width: 900px;
+            margin: 10px auto 42px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        header h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            letter-spacing: -1px;
+            color: #cdc1d4;
+        }
+
+        header h1 span {
+            color: var(--azul);
+        }
+
+        .subtitle {
+            max-width: 720px;
+            margin: 0 auto;
+            color: #a7b0c0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .notice {
+            margin: 18px auto 0;
+            color: #8bdcfb;
+            font-size: .88rem;
+        }
+
+        /* ===== CUADRÍCULA DE TARJETAS ===== */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
+            gap: 26px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            overflow: hidden;
+            background: linear-gradient(155deg, #182238, #101827);
+            border: 1px solid var(--borde);
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+            transition: transform .25s ease, border-color .25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #3b82f6;
+        }
+
+        /* ===== VISOR 3D ===== */
+       /* Esto le dará vida al contenedor donde flota el animal */
+.viewer-section {
+    position: relative;
+            height: 310px;
+            background: radial-gradient(circle, #27364d 0%, #111827 76%);
+            border-bottom: 1px solid var(--borde);
+
+  background: linear-gradient(135deg, #2f2f78, #222236);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+        model-viewer {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            --poster-color: transparent;
+            --progress-bar-color: var(--azul);
+            --progress-mask: #151c2d;
+        }
+
+        .viewer-tip {
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            padding: 7px 10px;
+            border-radius: 8px;
+            color: #d7e7f8;
+            background: rgba(5, 12, 24, .72);
+            font-size: .76rem;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        /* ===== INFORMACIÓN DEL ANIMAL ===== */
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 22px;
+        }
+
+        .badge {
+            align-self: flex-start;
+            margin-bottom: 14px;
+            padding: 7px 11px;
+            border-radius: 7px;
+            color: #fff;
+            font-size: .7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .4px;
+        }
+
+        .carnivoro {
+            background: linear-gradient(135deg, #ef4444, #991b1b);
+        }
+
+        .herbivoro {
+            background: linear-gradient(135deg, #10b981, #047857);
+        }
+
+        .info-section h2 {
+            margin: 0 0 10px;
+            color: #fff;
+            font-size: 1.45rem;
+        }
+
+        .info-section p {
+            margin: 0;
+            color: var(--texto-suave);
+            font-size: .96rem;
+            line-height: 1.7;
+        }
+
+        /* ===== REPRODUCTOR DE SONIDO ===== */
+        .sound-section {
+            margin-top: 20px;
+            padding: 14px;
+            background: rgba(7, 17, 32, .75);
+            border: 1px solid #2a3e5d;
+            border-radius: 12px;
+        }
+
+        .sound-heading {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .sound-icon {
+            display: grid;
+            place-items: center;
+            flex: 0 0 42px;
+            width: 42px;
+            height: 42px;
+            border: 0;
+            border-radius: 50%;
+            color: white;
+            background: #0878e8;
+            font-size: 1.15rem;
+            cursor: pointer;
+            transition: background .2s, transform .2s;
+        }
+
+        .sound-icon:hover {
+            background: #1598ff;
+            transform: scale(1.05);
+        }
+
+        .sound-icon:focus-visible,
+        .progress:focus-visible,
+        .volume:focus-visible {
+            outline: 3px solid #7dd3fc;
+            outline-offset: 3px;
+        }
+
+        .sound-title {
+            margin: 0;
+            color: #eaf5ff;
+            font-size: .95rem;
+            font-weight: 700;
+        }
+
+        .sound-status {
+            margin-top: 3px;
+            color: #94a3b8;
+            font-size: .78rem;
+        }
+
+        .audio-controls {
+            display: grid;
+            grid-template-columns: 38px minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .play-button {
+            display: grid;
+            place-items: center;
+            width: 36px;
+            height: 36px;
+            border: 1px solid #345477;
+            border-radius: 9px;
+            background: #10233d;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .play-button:hover {
+            background: #17395d;
+        }
+
+        .progress {
+            width: 100%;
+            accent-color: var(--azul);
+            cursor: pointer;
+        }
+
+        .time {
+            color: #cbd5e1;
+            font-size: .72rem;
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .volume-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            color: #9fb1c9;
+            font-size: .78rem;
+        }
+
+        .volume {
+            width: 100%;
+            accent-color: var(--azul);
+            cursor: pointer;
+        }
+
+        .instructions {
+            margin-top: auto;
+            padding-top: 17px;
+            color: #60a5fa;
+            font-size: .82rem;
+            line-height: 1.5;
+        }
+
+        /* ===== PIE DE PÁGINA ===== */
+        footer {
+            margin: 42px auto 5px;
+            text-align: center;
+            color: #8994a8;
+            font-size: .88rem;
+            line-height: 1.6;
+        }
+
+        footer strong {
+            color: #7dd3fc;
+        }
+
+        /* ===== DISEÑO PARA CELULARES ===== */
+        @media (max-width: 600px) {
+            body {
+                padding: 22px 12px;
+            }
+
+            header {
+                margin-bottom: 28px;
+            }
+
+            .viewer-section {
+                height: 280px;
+            }
+
+            .info-section {
+                padding: 18px;
+            }
+
+            .grid-container {
+                gap: 18px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+
+            .card:hover {
+                transform: none;
+            }
+        }

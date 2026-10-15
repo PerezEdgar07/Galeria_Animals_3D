@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora seis animales silvestres con modelos 3D interactivos y sonidos.">
+    <title>Fauna Silvestre 3D | Mundo Animal</title>
+
+    <!-- Biblioteca para visualizar modelos 3D GLB -->
+    <script type="module"
+        src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo" aria-hidden="true">🐾</div>
+        <h1>Fauna Silvestre <span>3D</span></h1>
+        <p class="subtitle">
+            Explora la fauna silvestre de una manera interactiva.
+            Gira los modelos, amplía los detalles y descubre las características
+            de cada animal mientras escuchas sus sonidos.
+        </p>
+        <p class="notice">🎧 Activa el sonido desde cada tarjeta cuando quieras escucharlo.</p>
+    </header>
+
+    <main class="grid-container">
+
+        <!-- ANIMAL 1: LOBO -->
+        <article class="card">
+            <div class="viewer-section">
+                <model-viewer
+                    src="Animales_glb/lobo.glb"
+                    alt="Modelo tridimensional de un lobo gris"
+                    camera-controls
+                    auto-rotate
+                    rotation-per-second="15deg"
+                    shadow-intensity="1"
+                    exposure="1"
+                    environment-image="neutral"
+                    loading="eager">
+                </model-viewer>
+                <div class="viewer-tip">🖱️ Arrastra para girar · Pellizca o usa la rueda para ampliar</div>
+            </div>
+            <div class="info-section">
+                <span class="badge carnivoro">🐾 Depredador cooperativo</span>
+                <h2>Lobo gris</h2>
+                <p>
+                    El lobo gris es un mamífero carnívoro que vive frecuentemente
+                    en manadas. La cooperación entre sus integrantes facilita
+                    la búsqueda de alimento y la defensa de su territorio.
+                </p>
+
+                <section class="sound-section" data-audio="./sonidos/lobo.mp3" aria-label="Sonido del lobo gris">
+                    <div class="sound-heading">
+                        <button class="sound-icon" type="button" data-action="toggle" aria-label="Escuchar al lobo">🔊</button>
+                        <div>
+                            <h3 class="sound-title">Escucha al lobo</h3>
+                            <div class="sound-status" aria-live="polite">Aullido del lobo</div>
+                        </div>
+                    </div>
+                    <div class="audio-controls">
+                        <button class="play-button" type="button" data-action="toggle" aria-label="Reproducir sonido">▶</button>
+                        <input class="progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Progreso del sonido">
+                        <span class="time">0:00 / 0:00</span>
+                    </div>
+                    <div class="volume-row">
+                        <span aria-hidden="true">🔉</span>
+                        <label class="sr-volume">Volumen</label>
+                        <input class="volume" type="range" min="0" max="1" value="0.8" step="0.05" aria-label="Volumen del sonido">
+                    </div>
+                </section>
+
+                <div class="instructions">🖱️ Arrastra el modelo para girarlo y usa la rueda para ampliar.</div>
+            </div>
+        </article>
+
+        <!-- ANIMAL 2: LEONA -->
+        <article class="card">
+            <div class="viewer-section">
+                <model-viewer
+                    src="Animales_glb/leona.glb"
+                    alt="Modelo tridimensional de una leona"
+                    camera-controls
+                    auto-rotate
+                    rotation-per-second="15deg"
+                    shadow-intensity="1"
+                    exposure="1"
+                    environment-image="neutral"
+                    loading="eager">
+                </model-viewer>
+                <div class="viewer-tip">🖱️ Arrastra para girar · Pellizca o usa la rueda para ampliar</div>
+            </div>
+            <div class="info-section">
+                <span class="badge carnivoro">🐾 Cazadora social</span>
+                <h2>Leona</h2>
+                <p>
+                    La leona es una gran cazadora de la sabana africana.
+                    Vive en grupos sociales y puede cooperar con otras leonas
+                    para capturar presas.
+                </p>
+
+                <section class="sound-section" data-audio="./sonidos/leona.mp3" aria-label="Sonido de la leona">
+                    <div class="sound-heading">
+                        <button class="sound-icon" type="button" data-action="toggle" aria-label="Escuchar a la leona">🔊</button>
+                        <div>
+                            <h3 class="sound-title">Escucha a la leona</h3>
+                            <div class="sound-status" aria-live="polite">Rugido de león</div>
+                        </div>
+                    </div>
+                    <div class="audio-controls">
+                        <button class="play-button" type="button" data-action="toggle" aria-label="Reproducir sonido">▶</button>
+                        <input class="progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Progreso del sonido">
+                        <span class="time">0:00 / 0:00</span>
+                    </div>
+                    <div class="volume-row">
+                        <span aria-hidden="true">🔉</span>
+                        <label class="sr-volume">Volumen</label>
+                        <input class="volume" type="range" min="0" max="1" value="0.8" step="0.05" aria-label="Volumen del sonido">
+                    </div>
+                </section>
+
+                <div class="instructions">🖱️ Arrastra el modelo para girarlo y usa la rueda para ampliar.</div>
+            </div>
+        </article>
+
+        <!-- ANIMAL 3: ZORRO -->
+        <article class="card">
+            <div class="viewer-section">
+                <model-viewer
+                    src="Animales_glb/zorro.glb"
+                    alt="Modelo tridimensional de un zorro rojo"
+                    camera-controls
+                    auto-rotate
+                    rotation-per-second="15deg"
+                    shadow-intensity="1"
+                    exposure="1"
+                    environment-image="neutral"
+                    loading="eager">
+                </model-viewer>
+                <div class="viewer-tip">🖱️ Arrastra para girar · Pellizca o usa la rueda para ampliar</div>
+            </div>
+            <div class="info-section">
+                <span class="badge carnivoro">🐾 Cazador adaptable</span>
+                <h2>Zorro rojo</h2>
+                <p>
+                    El zorro rojo destaca por su agilidad y capacidad de adaptación.
+                    Su alimentación incluye pequeños mamíferos, insectos, aves y frutos.
+                </p>
+
+                <section class="sound-section" data-audio="./sonidos/zorro.mp3" aria-label="Sonido del zorro">
+                    <div class="sound-heading">
+                        <button class="sound-icon" type="button" data-action="toggle" aria-label="Escuchar al zorro">🔊</button>
+                        <div>
+                            <h3 class="sound-title">Escucha al zorro</h3>
+                            <div class="sound-status" aria-live="polite">Llamada del zorro</div>
+                        </div>
+                    </div>
+                    <div class="audio-controls">
+                        <button class="play-button" type="button" data-action="toggle" aria-label="Reproducir sonido">▶</button>
+                        <input class="progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Progreso del sonido">
+                        <span class="time">0:00 / 0:00</span>
+                    </div>
+                    <div class="volume-row">
+                        <span aria-hidden="true">🔉</span>
+                        <label class="sr-volume">Volumen</label>
+                        <input class="volume" type="range" min="0" max="1" value="0.8" step="0.05" aria-label="Volumen del sonido">
+                    </div>
+                </section>
+
+                <div class="instructions">🖱️ Arrastra el modelo para girarlo y usa la rueda para ampliar.</div>
+            </div>
+        </article>
+
+        <!-- ANIMAL 4: CIERVO -->
+        <article class="card">
+            <div class="viewer-section">
+                <model-viewer
+                    src="Animales_glb/ciervo.glb"
+                    alt="Modelo tridimensional de un ciervo"
+                    camera-controls
+                    auto-rotate
+                    rotation-per-second="15deg"
+                    shadow-intensity="1"
+                    exposure="1"
+                    environment-image="neutral"
+                    loading="eager">
+                </model-viewer>
+                <div class="viewer-tip">🖱️ Arrastra para girar · Pellizca o usa la rueda para ampliar</div>
+            </div>
+            <div class="info-section">
+                <span class="badge herbivoro">🌿 Herbívoro del bosque</span>
+                <h2>Ciervo</h2>
+                <p>
+                    El ciervo es un mamífero herbívoro que se alimenta de hojas,
+                    hierbas y brotes. Su velocidad y sus sentidos le ayudan
+                    a detectar posibles peligros.
+                </p>
+
+                <section class="sound-section" data-audio="./sonidos/ciervo.mp3" aria-label="Sonido del ciervo">
+                    <div class="sound-heading">
+                        <button class="sound-icon" type="button" data-action="toggle" aria-label="Escuchar al ciervo">🔊</button>
+                        <div>
+                            <h3 class="sound-title">Escucha al ciervo</h3>
+                            <div class="sound-status" aria-live="polite">Llamada del ciervo</div>
+                        </div>
+                    </div>
+                    <div class="audio-controls">
+                        <button class="play-button" type="button" data-action="toggle" aria-label="Reproducir sonido">▶</button>
+                        <input class="progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Progreso del sonido">
+                        <span class="time">0:00 / 0:00</span>
+                    </div>
+                    <div class="volume-row">
+                        <span aria-hidden="true">🔉</span>
+                        <label class="sr-volume">Volumen</label>
+                        <input class="volume" type="range" min="0" max="1" value="0.8" step="0.05" aria-label="Volumen del sonido">
+                    </div>
+                </section>
+
+                <div class="instructions">🖱️ Arrastra el modelo para girarlo y usa la rueda para ampliar.</div>
+            </div>
+        </article>
+
+        <!-- ANIMAL 5: BORREGO CIMARRÓN -->
+        <article class="card">
+            <div class="viewer-section">
+                <model-viewer
+                    src="Animales_glb/borrego.glb"
+                    alt="Modelo tridimensional de un borrego cimarrón"
+                    camera-controls
+                    auto-rotate
+                    rotation-per-second="15deg"
+                    shadow-intensity="1"
+                    exposure="1"
+                    environment-image="neutral"
+                    loading="eager">
+                </model-viewer>
+                <div class="viewer-tip">🖱️ Arrastra para girar · Pellizca o usa la rueda para ampliar</div>
+            </div>
+            <div class="info-section">
+                <span class="badge herbivoro">🌿 Especialista de montaña</span>
+                <h2>Borrego cimarrón</h2>
+                <p>
+                    Este mamífero habita en regiones montañosas y terrenos rocosos.
+                    Sus pezuñas le proporcionan un buen agarre para desplazarse
+                    por pendientes.
+                </p>
+
+                <section class="sound-section" data-audio="./sonidos/borrego.mp3" aria-label="Sonido del borrego cimarrón">
+                    <div class="sound-heading">
+                        <button class="sound-icon" type="button" data-action="toggle" aria-label="Escuchar al borrego cimarrón">🔊</button>
+                        <div>
+                            <h3 class="sound-title">Escucha al borrego</h3>
+                            <div class="sound-status" aria-live="polite">Balido de oveja silvestre</div>
+                        </div>
+                    </div>
+                    <div class="audio-controls">
+                        <button class="play-button" type="button" data-action="toggle" aria-label="Reproducir sonido">▶</button>
+                        <input class="progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Progreso del sonido">
+                        <span class="time">0:00 / 0:00</span>
+                    </div>
+                    <div class="volume-row">
+                        <span aria-hidden="true">🔉</span>
+                        <label class="sr-volume">Volumen</label>
+                        <input class="volume" type="range" min="0" max="1" value="0.8" step="0.05" aria-label="Volumen del sonido">
+                    </div>
+                </section>
+
+                <div class="instructions">🖱️ Arrastra el modelo para girarlo y usa la rueda para ampliar.</div>
+            </div>
+        </article>
+
+        <!-- ANIMAL 6: CONEJO -->
+        <article class="card">
+            <div class="viewer-section">
+                <model-viewer
+                    src="Animales_glb/conejo.glb"
+                    alt="Modelo tridimensional de un conejo"
+                    camera-controls
+                    auto-rotate
+                    rotation-per-second="15deg"
+                    shadow-intensity="1"
+                    exposure="1"
+                    environment-image="neutral"
+                    loading="eager">
+                </model-viewer>
+                <div class="viewer-tip">🖱️ Arrastra para girar · Pellizca o usa la rueda para ampliar</div>
+            </div>
+            <div class="info-section">
+                <span class="badge herbivoro">🌿 Especialista en evasión</span>
+                <h2>Conejo</h2>
+                <p>
+                    El conejo es un mamífero herbívoro que utiliza sus potentes
+                    patas traseras para desplazarse mediante saltos y escapar
+                    de sus depredadores.
+                </p>
+
+                <section class="sound-section" data-audio="./sonidos/conejo.mp3" aria-label="Sonido del conejo">
+                    <div class="sound-heading">
+                        <button class="sound-icon" type="button" data-action="toggle" aria-label="Escuchar al conejo">🔊</button>
+                        <div>
+                            <h3 class="sound-title">Escucha al conejo</h3>
+                            <div class="sound-status" aria-live="polite">Chillido de conejo</div>
+                        </div>
+                    </div>
+                    <div class="audio-controls">
+                        <button class="play-button" type="button" data-action="toggle" aria-label="Reproducir sonido">▶</button>
+                        <input class="progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Progreso del sonido">
+                        <span class="time">0:00 / 0:00</span>
+                    </div>
+                    <div class="volume-row">
+                        <span aria-hidden="true">🔉</span>
+                        <label class="sr-volume">Volumen</label>
+                        <input class="volume" type="range" min="0" max="1" value="0.8" step="0.05" aria-label="Volumen del sonido">
+                    </div>
+                </section>
+
+                <div class="instructions">🖱️ Arrastra el modelo para girarlo y usa la rueda para ampliar.</div>
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <p><strong>Fauna Silvestre 3D</strong> · Una experiencia interactiva de aprendizaje</p>
+        <p>Los sonidos se reproducen únicamente cuando pulsas los controles.</p>
+    </footer>
+
+    <script src="./script.js" defer></script>
+</body>
+</html>
